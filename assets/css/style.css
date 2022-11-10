@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900");
+*,
+html,
+body,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(225deg, #c04848, #480048);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 1000px;
+  padding-inline: 20px;
+  margin-inline: auto;
+}
+.wrapper .carousel {
+  overflow-x: hidden;
+}
+.wrapper .carousel .slider {
+  font-size: 0px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+.wrapper .carousel .slider img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 1s cubic-bezier(0.25, 0.1, 0.15, 1);
+}
+.wrapper .carousel button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  opacity: 0;
+  transition: opacity 500ms ease-out, translate 1000ms cubic-bezier(0.3, 0.8, 0.2, 1);
+}
+.wrapper .carousel button svg {
+  color: white;
+  width: clamp(36px, 2vw, 60px);
+  height: clamp(36px, 2vw, 60px);
+  pointer-events: none;
+}
+.wrapper .carousel button#prev {
+  left: 0;
+  translate: -550% -50%;
+}
+.wrapper .carousel button#next {
+  right: 0;
+  translate: 550% -50%;
+}
+@media (hover: none) {
+  .wrapper .carousel button {
+    opacity: 1;
+  }
+  .wrapper .carousel button#prev {
+    translate: -50% -50%;
+  }
+  .wrapper .carousel button#next {
+    translate: 50% -50%;
+  }
+}
+.wrapper:hover button {
+  opacity: 1;
+}
+.wrapper:hover button#prev {
+  translate: -50% -50%;
+}
+.wrapper:hover button#next {
+  translate: 50% -50%;
+}/*# sourceMappingURL=style.css.map */
